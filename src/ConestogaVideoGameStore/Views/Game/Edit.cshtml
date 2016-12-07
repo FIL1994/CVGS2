@@ -1,0 +1,58 @@
+@model ConestogaVideoGameStore.Models.Game
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Game</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="GameId" />
+        <div class="form-group">
+            <label asp-for="Esrb" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Esrb" class="form-control" />
+                <span asp-validation-for="Esrb" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Genre" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SalesDiscountId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SalesDiscountId" class="form-control" />
+                <span asp-validation-for="SalesDiscountId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

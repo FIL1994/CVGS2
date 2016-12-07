@@ -19,7 +19,7 @@ namespace ConestogaVideoGameStore.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Game.ToListAsync());
+             return View(await _context.Game.ToListAsync());
         }
         public async Task<IActionResult> Details(int? id)
         {
