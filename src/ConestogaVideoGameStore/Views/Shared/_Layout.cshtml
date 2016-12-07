@@ -1,69 +1,155 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ConestogaVideoGameStore</title>
 
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />*@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ConestogaVideoGameStore</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    <header>
+        <!--If Not Logged In-->
+        <nav>
+            <div class="nav-wrapper blue-grey darken-1">
+                <a href="#" class="brand-logo"><img src="img/Logo.png" width="60px"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li style="padding: 0px 10px 0px 0px">
+                        <input type="text" placeholder="Username">
+                    </li>
+                    <li style="padding: 0px 10px 0px 0px">
+                        <input type="password" placeholder="Password">
+                    </li>
+                    <li>
+                        <a href="#!">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html">Register</a>
+                    </li>
                 </ul>
-                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </nav>
+        <!-- If Logged In
+            <nav>
+                <div class="nav-wrapper blue-grey darken-1">
+                    <a href="#" class="brand-logo"><img src="img/Logo.png" width="60px"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Friends List">
+                                    perm_identity
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Wish List">
+                                    list
+                                </i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cart">
+                                    shopping_cart
+                                </i>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+                        <ul id="dropdown1" class="dropdown-content">
+                            <li><a href="#!">Settings</a></li>
+                            @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>*@
+                            <li><a href="#!">My Reviews</a></li>
+                            <li><a href="#!">Preferences</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#!">Log Out</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+            -->
+    </header>
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CVGS</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                    @await Html.PartialAsync("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <!--Scripts-->
+    <!--Need to call scripts before RenderBody-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="~/lib/materialize/js/materialize.min.js"></script>
+    <script>
+            $(".dropdown-button").dropdown();
+    </script>
+    <section class="container body-content">
+        @RenderBody()
+    </section>
+    <footer class="page-footer blue-grey darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">CVGS</h5>
+                    <p class="grey-text text-lighten-4">Conestoga Virtual Game Store</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="http://www.conestogac.on.ca/">Conestoga College</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Request a Game</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - ConestogaVideoGameStore</p>
-        </footer>
-    </div>
-
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 CVGS
+            </div>
+        </div>
+    </footer>
     <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        @*<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>*@
+        @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery">
+            </script>*@
+        @*<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+            </script>*@
     </environment>
-
     @RenderSection("scripts", required: false)
 </body>
 </html>
