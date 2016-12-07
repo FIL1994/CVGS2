@@ -1,9 +1,13 @@
-body{
+﻿body{
     background: rgb(173,228,233);
     background: -moz-linear-gradient(-45deg, rgba(173,228,233,1) 0%, rgba(166,213,218,1) 100%);
     background: -webkit-linear-gradient(-45deg, rgba(173,228,233,1) 0%,rgba(166,213,218,1) 100%);
     background: linear-gradient(135deg, rgba(173,228,233,1) 0%,rgba(166,213,218,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ade4e9', endColorstr='#a6d5da',GradientType=1 );
+
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 nav .brand-logo {
